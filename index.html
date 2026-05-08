@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Animales Libres!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🐾 Animales y su Libertad</h1>
+    <p>Aprendamos cómo los animales pueden vivir libres y felices</p>
+</header>
+
+<section class="animal-gallery">
+    <h2>Galería de Animales</h2>
+    <div class="image-container">
+        <img id="animal-image" src="https://images.unsplash.com/photo-1509099836639-18ba102cd98e?auto=format&fit=crop&w=500&q=80" alt="Elefante">
+        <button onclick="changeImage()">Cambiar Imagen</button>
+    </div>
+    <div class="info">
+        <p id="animal-info"><strong>Libertad:</strong> Los elefantes necesitan grandes espacios para caminar y vivir en grupos familiares.</p>
+        <p><strong>Comida:</strong> Hierba, hojas, frutas y raíces.</p>
+    </div>
+</section>
+
+<!-- ...existing code... -->
+
+<footer>
+    <p>🌱 Cuidar a los animales es cuidar el planeta</p>
+</footer>
+
+<script>
+    const images = [
+        { src: "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60", alt: "León", info: "<strong>Libertad:</strong> El león debe vivir en la sabana, en manadas, cazando libremente y sin estar en jaulas.<br><strong>Comida:</strong> Carne como cebras, antílopes y búfalos." },
+        { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszrkGPk-T--lIzzcr7S1gRoUbdMjSuL2Hlg&s", alt: "Elefante", info: "<strong>Libertad:</strong> Los elefantes necesitan grandes espacios para caminar y vivir en grupos familiares.<br><strong>Comida:</strong> Hierba, hojas, frutas y raíces." },
+        { src: "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13", alt: "Loro", info: "<strong>Libertad:</strong> Los loros deben volar libres en la selva y no vivir en jaulas pequeñas.<br><strong>Comida:</strong> Semillas, frutas y nueces." },
+        { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx3pRd5uNKxxMeeRIl_QEGC31svE-wxzoJSw&s", alt: "Ratón", info: "<strong>Libertad:</strong> Los ratones necesitan espacios para correr y esconderse.<br><strong>Comida:</strong> Semillas, frutas y vegetales." },
+        { src: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dGlncmV8ZW58MHx8MHx8fDA%3D", alt: "Tigre", info: "<strong>Libertad:</strong> Los tigres necesitan selvas grandes para cazar.<br><strong>Comida:</strong> Carne de presas como ciervos." }
+    ];
+    let currentIndex = 1;
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById('animal-image').src = images[currentIndex].src;
+        document.getElementById('animal-image').alt = images[currentIndex].alt;
+        document.getElementById('animal-info').innerHTML = images[currentIndex].info;
+    }
+</script>
+
+</body>
+</html>
